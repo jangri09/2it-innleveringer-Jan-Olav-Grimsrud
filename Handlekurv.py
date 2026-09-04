@@ -15,7 +15,7 @@ def ønsker_du_flere_varer():
             while True:
                 try:
                     global antall_energidrikk
-                    antall_energidrikk = int(input("Hvor mange energidrikker vil du kjøpe? "))
+                    antall_energidrikk =+ int(input("Hvor mange energidrikker vil du kjøpe? "))
                     break
                 except ValueError:
                     print("Vennligst skriv inn et gyldig tall for antall energidrikker.")
@@ -24,7 +24,7 @@ def ønsker_du_flere_varer():
             while True:
                 try:
                     global antall_baguette
-                    antall_baguette = int(input("Hvor mange baguetter vil du kjøpe? "))
+                    antall_baguette =+ int(input("Hvor mange baguetter vil du kjøpe? "))
                     break
                 except ValueError:
                     print("Vennligst skriv inn et gyldig tall for antall baguetter.")
@@ -48,6 +48,10 @@ for varer in range(1, 3):
     else:
         break
 
+if 'antall_energidrikk' not in globals():
+    antall_energidrikk = 0
+if 'antall_baguette' not in globals():
+    antall_baguette = 0
 totalpris = (antall_energidrikk * pris_energidrikk) + (antall_baguette * pris_baguette)
 totalpris_energidrikk = antall_energidrikk * pris_energidrikk
 totalpris_baguette = antall_baguette * pris_baguette
