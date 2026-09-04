@@ -1,7 +1,6 @@
 pris_baguette = 45
 pris_energidrikk = 25
-antall_baguette = 0
-antall_energidrikk = 0
+
 
 def handlekurv():
     print("Velkommen til handlekurven!")
@@ -52,6 +51,7 @@ for varer in range(1, 3):
 totalpris = (antall_energidrikk * pris_energidrikk) + (antall_baguette * pris_baguette)
 totalpris_energidrikk = antall_energidrikk * pris_energidrikk
 totalpris_baguette = antall_baguette * pris_baguette
+
 print(f"Du har kjøpt {antall_energidrikk} energidrikker til en totalpris av {totalpris_energidrikk} kr.")
 print(f"Du har kjøpt {antall_baguette} baguetter til en totalpris av {totalpris_baguette} kr.")  
 print(f"Totalpris: {totalpris} kr")
