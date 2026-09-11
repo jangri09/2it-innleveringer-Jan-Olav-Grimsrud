@@ -1,6 +1,7 @@
-pris_baguette = 45
-pris_energidrikk = 25
 
+with open("pris.txt", "r") as f:
+    pris_energidrikk = int(f.readline())
+    pris_baguette = int(f.readline())
 
 def handlekurv():
     print("Velkommen til handlekurven!")
