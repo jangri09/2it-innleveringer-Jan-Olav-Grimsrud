@@ -1,4 +1,3 @@
-Du har kjøpt 2 energidrikker til en totalpris av 60 kr.
-Du har kjøpt 1 baguetter til en totalpris av 40 kr.
-Du har kjøpt 0 poteter til en totalpris av 0 kr.
-Totalpris: 100 kr
+Du har kjøpt 1 energidrikker til en totalpris av 30 kr.
+Du har kjøpt 2 baguetter til en totalpris av 80 kr.
+Totalpris: 110 kr
