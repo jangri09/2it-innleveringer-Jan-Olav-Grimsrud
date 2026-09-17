@@ -1,3 +1,5 @@
+# ikke brukt AI
+#oppgave 1
 def romhilsen():
     print("Velkommen til romstasjon!")
     print("Gjør deg klar for avreise.")
@@ -6,6 +8,7 @@ romhilsen()
 romhilsen()
 romhilsen()
 
+#oppgave 2
 def vis_astronaut(navn):
     print("Astronaut: " + navn)
     print(navn + " er klar for oppdrag!")
@@ -14,6 +17,7 @@ vis_astronaut("Jan Olav")
 vis_astronaut("Elias")
 vis_astronaut("Filip")
 
+#oppgave 3
 def vis_maane(maane, planet):
     print("Måne: " + maane)
     print("Planet: " + planet)
@@ -21,3 +25,13 @@ def vis_maane(maane, planet):
 vis_maane("Europa", "Jupiter")
 vis_maane("Titan", "Saturn")
 vis_maane("Phobos", "Mars")
+
+#oppgave 4
+def beregn_reise(fart, tid):
+    avstand = fart * tid
+    return avstand
+
+print(f"Romskipet har reist",  beregn_reise(2000, 5), "km.")
+print(f"Romskipet har reist",  beregn_reise(240, 7), "km.")
+
+#oppgave 5
