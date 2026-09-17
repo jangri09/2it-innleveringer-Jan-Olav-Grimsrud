@@ -35,3 +35,10 @@ print(f"Romskipet har reist",  beregn_reise(2000, 5), "km.")
 print(f"Romskipet har reist",  beregn_reise(240, 7), "km.")
 
 #oppgave 5
+avstand = beregn_reise(240, 7)
+if avstand < 5000:
+    print("kort reise")
+elif avstand < 20000:
+    print("mellomlang reise")
+else:
+    print("lang reise")
