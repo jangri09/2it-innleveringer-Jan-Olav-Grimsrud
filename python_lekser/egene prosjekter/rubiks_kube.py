@@ -1,5 +1,7 @@
 import random
-
+import os
+import time
+os.system('cls' if os.name == 'nt' else 'clear')
 
 def generate_complete_cube():
     color_scheme = {
@@ -142,6 +144,7 @@ def is_cube_solved(cube):
 
 
 def scramble_cube(cube, moves=20):
+    os.system('cls' if os.name == 'nt' else 'clear')
     possible_moves = [
         "R",
         "R'",
@@ -170,14 +173,20 @@ def scramble_cube(cube, moves=20):
             move_F(cube, move)
         elif move.startswith("B"):
             move_B(cube, move)
+        print("scrambler...")
+        print_cube(rubiks_kube)
+        time.sleep(0.4)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+
 
 
 # --- SPILLSTART ---
 rubiks_kube = generate_complete_cube()
 scramble_cube(rubiks_kube, moves=8)
-
 print("Kuben er scramblet! Første tilstand:")
 print_cube(rubiks_kube)
+
 
 valid_moves = [
     "R",
@@ -220,6 +229,7 @@ while True:
         elif move.startswith("M"):
             move_M(rubiks_kube, move)
 
+        os.system('cls' if os.name == 'nt' else 'clear')
         print_cube(rubiks_kube)
 
         if is_cube_solved(rubiks_kube):
