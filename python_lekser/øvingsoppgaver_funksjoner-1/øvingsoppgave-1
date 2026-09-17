@@ -5,3 +5,11 @@ def romhilsen():
 romhilsen()
 romhilsen()
 romhilsen()
+
+def vis_astronaut(navn):
+    print("Astronaut: " + navn)
+    print(navn + " er klar for oppdrag!")
+
+vis_astronaut("Jan Olav")
+vis_astronaut("Elias")
+vis_astronaut("Filip")
