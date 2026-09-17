@@ -1,0 +1,7 @@
+def romhilsen():
+    print("Velkommen til romstasjon!")
+    print("Gjør deg klar for avreise.")
+
+romhilsen()
+romhilsen()
+romhilsen()
