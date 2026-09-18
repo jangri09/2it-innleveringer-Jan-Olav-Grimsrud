@@ -1,7 +1,24 @@
 import random
 import os
 import time
+
 os.system('cls' if os.name == 'nt' else 'clear')
+valid_moves = [
+    "R",
+    "R'",
+    "L",
+    "L'",
+    "U",
+    "U'",
+    "D",
+    "D'",
+    "F",
+    "F'",
+    "B",
+    "B'",
+    "M",
+    "M'",
+]
 
 def generate_complete_cube():
     color_scheme = {
@@ -124,12 +141,22 @@ def move_F(cube, notasjon="F"):
 
 def move_M(cube, notasjon="M"):
     repeat = 3 if "'" in notasjon else 1
+
     for _ in range(repeat):
+        # 1. Ta vare på 'foran' sin midtkolonne
         temp_foran = [cube["foran"][i][1] for i in range(3)]
+
         for i in range(3):
+            # Foran får fra Topp
             cube["foran"][i][1] = cube["topp"][i][1]
+
+            # Topp får fra Bak (må speilvendes med 2 - i)
             cube["topp"][i][1] = cube["bak"][2 - i][1]
-            cube["bak"][i][1] = cube["bunn"][2 - i][1]
+
+            # Bak får fra Bunn (må også speilvendes med 2 - i)
+            cube["bak"][2 - i][1] = cube["bunn"][i][1]
+
+            # Bunn får fra temp (opprinnelig Foran)
             cube["bunn"][i][1] = temp_foran[i]
 
 
@@ -145,22 +172,9 @@ def is_cube_solved(cube):
 
 def scramble_cube(cube, moves=20):
     os.system('cls' if os.name == 'nt' else 'clear')
-    possible_moves = [
-        "R",
-        "R'",
-        "L",
-        "L'",
-        "U",
-        "U'",
-        "D",
-        "D'",
-        "F",
-        "F'",
-        "B",
-        "B'",
-    ]
+
     for _ in range(moves):
-        move = random.choice(possible_moves)
+        move = random.choice(valid_moves)
         if move.startswith("R"):
             move_R(cube, move)
         elif move.startswith("L"):
@@ -175,6 +189,7 @@ def scramble_cube(cube, moves=20):
             move_B(cube, move)
         print("scrambler...")
         print_cube(rubiks_kube)
+        print(move)
         time.sleep(0.4)
         os.system('cls' if os.name == 'nt' else 'clear')
         
@@ -183,31 +198,18 @@ def scramble_cube(cube, moves=20):
 
 # --- SPILLSTART ---
 rubiks_kube = generate_complete_cube()
-scramble_cube(rubiks_kube, moves=8)
-print("Kuben er scramblet! Første tilstand:")
-print_cube(rubiks_kube)
 
-
-valid_moves = [
-    "R",
-    "R'",
-    "L",
-    "L'",
-    "U",
-    "U'",
-    "D",
-    "D'",
-    "F",
-    "F'",
-    "B",
-    "B'",
-    "M",
-    "M'",
-]
+def start_spill():
+    scramble_cube(rubiks_kube, moves=10)
+    print("Kuben er scramblet! Første tilstand:")
+    print_cube(rubiks_kube)
+start_spill()
 
 while True:
     move = input(
-        "Skriv inn et trekk (R, R', L, L', U, U', D, D', F, F', B, B', M, M') eller 'exit': "
+        "Skriv inn et trekk (R, R', L, L', U, U', D, D', F, F', B, B', M, M')\n" \
+        "Skriv scramble for å scramble kuben\n" \
+        "Eller skriv exit for å avslutte: "
     ).strip()
 
     if move.lower() == "exit":
@@ -235,5 +237,7 @@ while True:
         if is_cube_solved(rubiks_kube):
             print("Gratulerer! Du har løst kuben! 🎉")
             break
+    elif move.lower() == "scramble":
+            start_spill()
     else:
         print("Ugyldig trekk. Prøv igjen.")
