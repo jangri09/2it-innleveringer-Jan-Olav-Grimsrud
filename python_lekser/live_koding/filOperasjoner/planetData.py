@@ -18,3 +18,4 @@ with open("filOperasjoner/planeter.txt", "r") as fil:
     print(fil.read())
 print("planeten ble lagret")
 
+
