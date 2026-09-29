@@ -45,3 +45,11 @@ for tallverdi in tall:
 
 for index, planet in enumerate(solsystem):
     print(index, planet)
+
+mars = {
+    "navn": "mars",
+    "antmaaner": 2,
+
+}
+
+print(mars["antmaaner"])
