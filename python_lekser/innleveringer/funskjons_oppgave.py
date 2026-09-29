@@ -13,6 +13,7 @@ def vurder_signaltid_satelitt(tid):
         return "Forsinket kommunikasjon"
     else:
         return "Stor forsinkelse"
+
 def meteorvarsel(dimeter, km_fra_jorden):
     if dimeter >= 10000:
         return "Høy risiko"
@@ -38,3 +39,4 @@ print(vurder_signaltid_satelitt(signaltid))
 print(meteorvarsel(5000, 4000))
 print(meteorvarsel(1000, 10000))
 print(meteorvarsel(2272, 112313))
+
