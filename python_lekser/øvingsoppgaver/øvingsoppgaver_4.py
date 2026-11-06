@@ -8,5 +8,5 @@ print("Antall astronauter: ", random.randint(1,10))
 planet = input("Navn på planet: ")
 antmaaner = int(input("Antall måner: "))
 
-
+with open("")
 
