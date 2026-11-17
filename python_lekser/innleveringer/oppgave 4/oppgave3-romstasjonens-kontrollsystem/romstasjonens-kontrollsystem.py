@@ -37,4 +37,15 @@ class Sensorer(Romstasjonens_enheter):
     def utfor_oppgave(self):
         print(f"Sensoren {self.navn} utførte oppgaven med sensor type: {self.sensor_type}.")
 
-tore = Roboter("Tore", "aktiv", "reparasjon")
+wall_E = Roboter("Wall-E", "aktiv", "rydde opp i romstasjonen")
+hubble = Satellitter("Hubble", "aktiv", "optisk teleskop")
+advanced_sensor = Sensorer("Advanced Sensor", "aktiv", "temperaturmåling")
+mars_rover = Roboter("Mars Rover", "aktiv", "utforske Mars-overflaten")
+x_ray_sensor = Sensorer("X-Ray Sensor", "aktiv", "røntgenmåling")
+
+enheter = [wall_E, hubble, advanced_sensor, mars_rover, x_ray_sensor]
+
+for enhet in enheter:
+    enhet.utfor_oppgave()
+    print()  
+
